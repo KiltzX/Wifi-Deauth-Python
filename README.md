@@ -4,7 +4,8 @@ Wifi-Deauth-Python is a Python script for automate wifi deauth attack.
 
 ## Installation
 
-You need airmon-ng and airodump installed in your machine
+You need airmon-ng and airodump-ng installed in your machine.
+
 I tested using Kali-Linux 2021.2
 
 ```bash
@@ -15,8 +16,8 @@ git clone https://github.com/KiltzX/Wifi-Deauth-Python
 
 
 ```bash
-sudo python3 start.py #Get wifi interfaces and enable monitor mode
-sudo python3 deauth.py [interface] #To start from deauth attack
+sudo python3 start.py # Get wifi interfaces and enable monitor mode
+sudo python3 deauth.py [interface] # To start from deauth attack
 ```
 
 
