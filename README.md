@@ -1,6 +1,6 @@
 # Wifi-Deauth-Python
 
-Wifi-Deauth-Python is a Python library for automate wifi deauth attack.
+Wifi-Deauth-Python is a Python script for automate wifi deauth attack.
 
 ## Installation
 
