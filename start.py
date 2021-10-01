@@ -33,7 +33,6 @@ def listInterfaces():
 def getInterfaceOn(interface):
     return_res = os.popen("sudo airmon-ng | awk '{print $2}'").read()
     arrayInterfaces = return_res.split(sep="\n")
-    print(arrayInterfaces)
     for n in range(int(len(arrayInterfaces))):
         if arrayInterfaces[n].find(interface) != -1:
             deauth.scan(arrayInterfaces[n])
