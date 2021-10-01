@@ -1,4 +1,5 @@
-import os,re
+import os
+import re
 import deauth
 
 
@@ -29,13 +30,20 @@ def listInterfaces():
         return "This is not a interface available"
 
 
+def getInterfaceOn(interface):
+    return_res = os.popen("sudo airmon-ng | awk '{print $2}'").read()
+    arrayInterfaces = return_res.split(sep="\n")
+    print(arrayInterfaces)
+    for n in range(int(len(arrayInterfaces))):
+        if arrayInterfaces[n].find(interface) != -1:
+            deauth.scan(arrayInterfaces[n])
+
 def startMonitorMode(interface):
     if interface.find("This is not a interface available") == -1:
         os.system("sudo airmon-ng start " + interface)
         chosse = input('Start deauth attack ?:')
         if chosse in ['yes', 'Yes', 'YES', 'Y', 'y']:
-            deauth.scan(interface + 'mon')
-
+            getInterfaceOn(interface)
 
 print("Listing available interfaces")
 print("|------------------------|")
